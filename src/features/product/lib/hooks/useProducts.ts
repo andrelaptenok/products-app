@@ -46,6 +46,8 @@ export const useProducts = () => {
     async (product: Omit<Product, 'id'>) => {
       const tempProduct: Product = { ...product, id: products.length + 1 };
 
+      setProducts((prev) => [...prev, tempProduct]);
+
       try {
         const newProduct = await createProduct(product);
         setProducts((prev) => prev.map((el) => (el.id === tempProduct.id ? newProduct : el)));
