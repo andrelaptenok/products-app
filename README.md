@@ -3,6 +3,7 @@
 A products management application with role-based authentication and a UI built with `React` and `Mantine` components.
 
 Features:
+
 - Authentication (demo login as `admin`, persisted in `localStorage`)
 - Products list view
 - Search and sorting
@@ -62,7 +63,7 @@ The app uses an environment variable for the API base URL.
 Create a `.env` file in the project root (next to `package.json`) and add:
 
 ```bash
-VITE_API_PATH=https://your-api-url.com
+VITE_API_PATH=https://fakestoreapi.com
 ```
 
 - The variable is read in `src/shared/lib/config/env.ts` via `import.meta.env.VITE_API_PATH`.
@@ -149,7 +150,8 @@ npm run build
 firebase deploy --only hosting
 ```
 
-Make sure your Firebase project is already initialized and configured for this repo (`firebase.json`, `.firebaserc`, etc.).
+Make sure your Firebase project is already initialized and configured for this repo (`firebase.json`, `.firebaserc`,
+etc.).
 
 ---
 
@@ -157,23 +159,25 @@ Make sure your Firebase project is already initialized and configured for this r
 
 - `src/main.tsx` — app entry point, sets up `React`, `React Router`, Mantine and providers.
 - `src/app/` — routing (`AppRoutes`, `ProtectedRoute`, `PublicRoute`, `RoleProtectedRoute`).
-- `src/pages/`  
-  - `Login/` — login page. Auth by username (role mapping stored in `USER_CREDENTIALS` in `userRoles.ts`).  
-  - `Products/` — products list page with search, sorting, pagination and add/edit modal.  
-  - `NotFound/` — 404 page.
+- `src/pages/`
+    - `Login/` — login page. Auth by username (role mapping stored in `USER_CREDENTIALS` in `userRoles.ts`).
+    - `Products/` — products list page with search, sorting, pagination and add/edit modal.
+    - `NotFound/` — 404 page.
 - `src/features/product/` — product domain logic (API, types, hooks, card and form components).
-- `src/shared/lib/` — shared utilities, config (`env`, `apiPath`, `storage`), services (`authService`), hooks (`useAuth`, `useProductsPage`, `useSortOptions`).
+- `src/shared/lib/` — shared utilities, config (`env`, `apiPath`, `storage`), services (`authService`), hooks (
+  `useAuth`, `useProductsPage`, `useSortOptions`).
 - `src/shared/ui/` — reusable UI components: buttons, search input, spinner, alerts, toasts, etc.
 
 ---
 
 ## Auth and roles
 
-- Roles are defined in `src/shared/lib/constants/userRoles.ts`.  
+- Roles are defined in `src/shared/lib/constants/userRoles.ts`.
 - Demo user:
-  - login: `admin`
-  - role: `admin`
-- On login, the role and auth flag are stored in `localStorage` (`AUTH_STORAGE_KEY`, `userRole`) and routes are protected via `ProtectedRoute` and `RoleProtectedRoute`.
+    - login: `admin`
+    - role: `admin`
+- On login, the role and auth flag are stored in `localStorage` (`AUTH_STORAGE_KEY`, `userRole`) and routes are
+  protected via `ProtectedRoute` and `RoleProtectedRoute`.
 
 ---
 
@@ -192,8 +196,10 @@ ESLint configuration lives in `eslint.config.js`; formatting is controlled by Pr
 
 ## Useful notes
 
-- The API client is implemented in `src/shared/lib/api/apiClient.ts` and uses `fetch` with the base URL from `VITE_API_PATH`.
-- Auth state (`isLoggedIn`) and user role (`userRole`) are stored in `localStorage` (see `authService.ts` and `storage.ts`).
+- The API client is implemented in `src/shared/lib/api/apiClient.ts` and uses `fetch` with the base URL from
+  `VITE_API_PATH`.
+- Auth state (`isLoggedIn`) and user role (`userRole`) are stored in `localStorage` (see `authService.ts` and
+  `storage.ts`).
 - Components use the Mantine design system (themes and styles via `src/shared/lib/theme.ts` and CSS modules).
 
 You can extend this README with sections about testing, CI/CD, API contracts, or contribution guidelines if needed.
