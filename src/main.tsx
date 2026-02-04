@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom/client';
 
 import '@mantine/core/styles.css';
 import '@mantine/notifications/styles.css';
+
 import { AppRoutes } from '@app/AppRoutes';
 import { ToastProvider } from '@shared/lib/context/toast/ToastProvider.tsx';
 import { theme } from '@shared/lib/theme';
