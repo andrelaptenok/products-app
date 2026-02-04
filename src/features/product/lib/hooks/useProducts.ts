@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
+import { v4 as uuidv4 } from 'uuid';
+
 import { createProduct, fetchProducts, updateProductApi } from '@features/product/api/productsApi';
 import { useToast } from '@shared/lib/context/toast/useToast';
 import { getErrorMessage } from '@shared/lib/utils/errorUtils';
@@ -44,16 +46,25 @@ export const useProducts = () => {
 
   const addProduct = useCallback(
     async (product: Omit<Product, 'id'>) => {
-      const tempProduct: Product = { ...product, id: products.length + 1 };
+      const tempId = Number(
+        uuidv4()
+          .replace(/[^0-9]/g, '')
+          .slice(0, 12),
+      );
+      const tempProduct: Product = { ...product, id: tempId };
 
-      setProducts((prev) => [...prev, tempProduct]);
+      setProducts((prev) => [tempProduct, ...prev]);
 
       try {
         const newProduct = await createProduct(product);
-        setProducts((prev) => prev.map((el) => (el.id === tempProduct.id ? newProduct : el)));
+
+        setProducts((prev) =>
+          prev.map((el) => (el.id === tempId ? { ...newProduct, id: tempId } : el)),
+        );
+
         notify('Product added', 'success');
       } catch (err) {
-        setProducts((prev) => prev.filter((el) => el.id !== tempProduct.id));
+        setProducts((prev) => prev.filter((el) => el.id !== tempId));
         handleError(err);
       }
     },
