@@ -1,0 +1,23 @@
+.filters {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+
+  @media (max-width: 468px) {
+    flex-direction: column;
+  }
+}
+
+.searchInput {
+  flex: 1;
+
+  @media (max-width: 468px) {
+    width: 100%;
+  }
+}
+
+.sortOptions {
+  @media (max-width: 468px) {
+    width: 100%;
+  }
+}
