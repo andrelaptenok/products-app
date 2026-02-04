@@ -2,6 +2,8 @@
 
 A products management application with role-based authentication and a UI built with `React` and `Mantine` components.
 
+The app is deployed on Firebase Hosting. Live: [**Products App**](https://products-app-89e69.web.app/login)
+
 Features:
 
 - Authentication (demo login as `admin`, persisted in `localStorage`)
