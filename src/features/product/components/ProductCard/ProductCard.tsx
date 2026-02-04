@@ -14,7 +14,7 @@ export const ProductCard = ({ product, onEdit }: Props) => {
   return (
     <Card shadow="sm" padding="lg" radius="md" withBorder h="100%">
       <Card.Section>
-        <Image src={product.image} height={200} alt={product.title} fit="cover" />
+        <Image src={product.image} height={200} alt={product.title} fit="cover" loading="lazy" />
       </Card.Section>
 
       <Stack gap="xs" mt="md" className={styles.blockSize}>

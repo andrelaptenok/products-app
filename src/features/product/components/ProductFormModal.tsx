@@ -54,12 +54,16 @@ export const ProductFormModal = ({ opened, onClose, onSubmit, initialValues }: P
           />
           <NumberInput
             label="Price"
-            {...form.getInputProps('price')}
             required
             min={0}
             decimalScale={2}
             prefix="$"
             aria-label="Product price"
+            onFocusCapture={(event) => {
+              const target = event.currentTarget as HTMLInputElement;
+              if (target.value === '$0') target.select();
+            }}
+            {...form.getInputProps('price')}
           />
           <Textarea
             label="Description"
