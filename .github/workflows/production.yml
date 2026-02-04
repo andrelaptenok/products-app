@@ -34,4 +34,4 @@ jobs:
         with:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
           projectId: ${{ secrets.FIREBASE_PROJECT_ID }}
-          channelId: ${{ github.ref == 'refs/heads/main' && 'live' || github.ref_name }}
+          channelId: ${{ github.ref == 'refs/heads/master' && 'live' || github.ref_name }}
