@@ -1,5 +1,5 @@
-import { TextInput } from '@mantine/core';
-import { IconSearch } from '@tabler/icons-react';
+import { ActionIcon, TextInput } from '@mantine/core';
+import { IconSearch, IconX } from '@tabler/icons-react';
 
 interface Props {
   value: string;
@@ -17,6 +17,13 @@ export const SearchInput = (props: Props) => {
       leftSection={<IconSearch size={16} />}
       value={value}
       onChange={(e) => onChange(e.currentTarget.value)}
+      rightSection={
+        value && (
+          <ActionIcon size={16} variant="outline" onClick={() => onChange('')}>
+            <IconX size={16} />
+          </ActionIcon>
+        )
+      }
       aria-label={ariaLabel}
       className={className}
     />

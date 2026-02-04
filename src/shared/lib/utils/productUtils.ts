@@ -2,7 +2,12 @@ import type { Product } from '@features/product/model/types';
 
 export const filterProducts = (products: Product[], search: string): Product[] => {
   if (!search.trim()) return products;
-  return products.filter((p) => p.title.toLowerCase().includes(search.toLowerCase()));
+  const lowerSearch = search.toLowerCase();
+  return products.filter(
+    (el) =>
+      el.title.toLowerCase().includes(lowerSearch) ||
+      el.category.toLowerCase().includes(lowerSearch),
+  );
 };
 
 export const sortProducts = (products: Product[], sort: string | null): Product[] => {
