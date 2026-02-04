@@ -3,7 +3,7 @@ import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
 
 import { ROUTES } from '@shared/lib';
-import { PageLoader } from '@shared/ui/PageLoader.tsx';
+import { PageLoader } from '@shared/ui/PageLoader';
 
 import { ProtectedRoute } from './ProtectedRoute';
 import { PublicRoute } from './PublicRoute';

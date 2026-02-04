@@ -1,4 +1,4 @@
-import { AUTH_STORAGE_KEY } from '@shared/lib/config/storage.ts';
+import { AUTH_STORAGE_KEY } from '@shared/lib/config/storage';
 
 import type { UserRole } from '@shared/lib';
 

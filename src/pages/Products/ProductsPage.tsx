@@ -1,9 +1,9 @@
 import { Badge, Center, Container, Group, Pagination, SimpleGrid, Stack } from '@mantine/core';
 
-import { ProductCard } from '@features/product/components/ProductCard/ProductCard.tsx';
+import { ProductCard } from '@features/product/components/ProductCard/ProductCard';
 import { ProductFormModal } from '@features/product/components/ProductFormModal';
-import { ProductsPageHeader } from '@pages/Products/ui/ProductsPageHeader.tsx';
-import { useProductsPage } from '@shared/lib/hooks/useProductsPage.ts';
+import { ProductsPageHeader } from '@pages/Products/ui/ProductsPageHeader';
+import { useProductsPage } from '@shared/lib/hooks/useProductsPage';
 import { useSortOptions } from '@shared/lib/hooks/useSortOptions';
 import { EmptyState, LoadingSpinner, SearchInput, SortSelect } from '@shared/ui';
 

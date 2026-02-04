@@ -5,7 +5,7 @@ import { IconArrowLeft, IconHome, IconMoodSad } from '@tabler/icons-react';
 
 import { ROUTES } from '@shared/lib';
 import { ActionButton } from '@shared/ui';
-import { ActionLink } from '@shared/ui/ActionLink.tsx';
+import { ActionLink } from '@shared/ui/ActionLink';
 
 const NotFoundPage = () => {
   const navigate = useNavigate();

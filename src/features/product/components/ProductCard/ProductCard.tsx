@@ -3,7 +3,7 @@ import { IconCategory, IconEdit } from '@tabler/icons-react';
 
 import styles from './ProductCard.module.css';
 
-import type { Product } from '@features/product/model/types.ts';
+import type { Product } from '@features/product/model/types';
 
 interface Props {
   product: Product;

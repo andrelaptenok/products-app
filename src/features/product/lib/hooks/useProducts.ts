@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { createProduct, fetchProducts, updateProductApi } from '@features/product/api/productsApi';
-import { useToast } from '@shared/lib/context/toast/useToast.ts';
+import { useToast } from '@shared/lib/context/toast/useToast';
 import { getErrorMessage } from '@shared/lib/utils/errorUtils';
 
 import type { Product } from '@features/product/model/types';
@@ -48,10 +48,10 @@ export const useProducts = () => {
 
       try {
         const newProduct = await createProduct(product);
-        setProducts((prev) => prev.map((p) => (p.id === tempProduct.id ? newProduct : p)));
+        setProducts((prev) => prev.map((el) => (el.id === tempProduct.id ? newProduct : el)));
         notify('Product added', 'success');
       } catch (err) {
-        setProducts((prev) => prev.filter((p) => p.id !== tempProduct.id));
+        setProducts((prev) => prev.filter((el) => el.id !== tempProduct.id));
         handleError(err);
       }
     },

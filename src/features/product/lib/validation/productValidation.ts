@@ -1,4 +1,4 @@
-import type { Product } from '@features/product/model/types.ts';
+import type { Product } from '@features/product/model/types';
 
 export const productFormValidation = {
   title: (value: string) => (value.trim().length > 0 ? null : 'Enter title'),

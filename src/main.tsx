@@ -8,7 +8,7 @@ import '@mantine/core/styles.css';
 import '@mantine/notifications/styles.css';
 
 import { AppRoutes } from '@app/AppRoutes';
-import { ToastProvider } from '@shared/lib/context/toast/ToastProvider.tsx';
+import { ToastProvider } from '@shared/lib/context/toast/ToastProvider';
 import { theme } from '@shared/lib/theme';
 
 import './index.css';

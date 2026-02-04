@@ -1,5 +1,5 @@
 import { apiClient } from '@shared/lib/api/apiClient';
-import { apiPath } from '@shared/lib/config/apiPath.ts';
+import { apiPath } from '@shared/lib/config/apiPath';
 
 import type { Product } from '@features/product/model/types';
 

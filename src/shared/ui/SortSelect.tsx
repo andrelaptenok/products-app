@@ -1,6 +1,6 @@
 import { Group, Select, Text } from '@mantine/core';
 
-import type { SortOptionData } from '@shared/lib/constants/sortOptions/types.ts';
+import type { SortOptionData } from '@shared/lib/constants/sortOptions/types';
 
 interface Props {
   value: string | null;

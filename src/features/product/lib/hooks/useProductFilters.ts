@@ -8,7 +8,7 @@ import {
   sortProducts,
 } from '@shared/lib/utils/productUtils';
 
-import type { Product } from '@features/product/model/types.ts';
+import type { Product } from '@features/product/model/types';
 
 const PAGE_SIZE = 6;
 

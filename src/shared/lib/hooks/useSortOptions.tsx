@@ -1,8 +1,8 @@
 import { IconArrowDown, IconArrowUp, IconSortAZ, IconSortZA } from '@tabler/icons-react';
 
-import { SORT_OPTIONS } from '@shared/lib/constants/sortOptions/sortOptions.ts';
+import { SORT_OPTIONS } from '@shared/lib/constants/sortOptions/sortOptions';
 
-import type { SortOptionData } from '@shared/lib/constants/sortOptions/types.ts';
+import type { SortOptionData } from '@shared/lib/constants/sortOptions/types';
 import type { ReactNode } from 'react';
 
 const ICONS_MAP: Record<string, ReactNode> = {

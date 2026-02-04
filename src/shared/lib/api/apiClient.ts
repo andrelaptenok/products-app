@@ -1,4 +1,4 @@
-import { API_URL } from '@shared/lib/config/env.ts';
+import { API_URL } from '@shared/lib/config/env';
 
 export const HttpStatus = {
   OK: 200,
