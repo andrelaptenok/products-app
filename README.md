@@ -92,7 +92,7 @@ npm run dev
 By default the app is available at:
 
 ```text
-http://localhost:5173
+http://localhost:3000
 ```
 
 HMR will reload the page automatically when you change the code.
