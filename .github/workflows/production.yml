@@ -29,6 +29,15 @@ jobs:
         env:
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
 
+      - name: Check VITE env
+        run: |
+          echo "VITE_API_URL: $VITE_API_URL"
+          echo "VITE_ENV: $VITE_ENV"
+          echo "VITE_SITE_URL: $VITE_SITE_URL"
+        env:
+          VITE_API_URL: ${{ secrets.VITE_API_URL }}
+          VITE_ENV: ${{ vars.VITE_API_URL }}
+
       - name: Deploy
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
