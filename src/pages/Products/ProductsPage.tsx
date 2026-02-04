@@ -11,8 +11,8 @@ import styles from './ProductsPage.module.css';
 
 export const ProductsPage = () => {
   const {
-    products,
     displayedProducts,
+    filteredProducts,
     loading,
     search,
     setSearch,
@@ -53,13 +53,13 @@ export const ProductsPage = () => {
             className={styles.sortOptions}
           />
         </Group>
-        <Badge size="xl" w="120" variant="outline" color="blue">
-          {products.length !== 0 && `Total:${products.length}`}
-        </Badge>
-
-        {search?.length > 0 && displayedProducts.length === 0 && !loading && (
-          <EmptyState title="No products found" />
+        {filteredProducts.length !== 0 && !loading && (
+          <Badge size="xl" w="120" variant="outline" color="blue">
+            Total:{filteredProducts.length}
+          </Badge>
         )}
+
+        {displayedProducts.length === 0 && !loading && <EmptyState title="No products found" />}
 
         {loading ? (
           <Center>

@@ -17,6 +17,7 @@ export const useProductsPage = () => {
     page,
     setPage,
     displayedProducts,
+    filteredProducts,
     resetPage,
     totalPages,
   } = useProductFilters(products);
@@ -82,6 +83,7 @@ export const useProductsPage = () => {
     canAddProduct,
     modalOpened,
     editingProduct,
+    filteredProducts,
     openAddModal,
     openEditModal,
     closeModal,
