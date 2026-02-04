@@ -53,3 +53,6 @@ jest-results.json
 *.zip
 *.bak
 *.log.*
+
+# TypeScript build info
+*.tsbuildinfo
