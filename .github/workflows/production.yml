@@ -30,7 +30,7 @@ jobs:
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
 
       - name: Deploy
-        uses: FirebaseExtended/action-hosting-deploy@v0.6.0
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           firebaseToken: ${{ secrets.FIREBASE_TOKEN }}
           projectId: ${{ secrets.FIREBASE_PROJECT_ID }}
